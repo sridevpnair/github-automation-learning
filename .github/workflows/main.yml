@@ -9,14 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check operating system
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List repository files
         run: |
-          echo "Hello from GitHub Actions!"
-          echo "I am running on:"
-          uname -a
-
-      - name: Check current directory
-        run: pwd
-
-      - name: List files
-        run: ls -la
+          echo "Files in my repository:"
+          ls -la
