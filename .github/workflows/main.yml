@@ -8,6 +8,9 @@ jobs:
   hello:
     runs-on: ubuntu-latest
 
+    env:
+      MY_NAME: Sridev
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,3 +22,6 @@ jobs:
 
       - name: Read README
         run: cat README.md
+
+      - name: Print my name
+        run: echo "My name is $MY_NAME"
