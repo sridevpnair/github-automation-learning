@@ -2,14 +2,17 @@ name: My First Workflow
 
 on:
   push:
+
   workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter your name"
+        required: true
+        default: "Sridev"
 
 jobs:
   hello:
     runs-on: ubuntu-latest
-
-    env:
-      MY_NAME: Sridev
 
     steps:
       - name: Checkout repository
@@ -23,5 +26,5 @@ jobs:
       - name: Read README
         run: cat README.md
 
-      - name: Print my name
-        run: echo "My name is $MY_NAME"
+      - name: Print name
+        run: echo "Hello ${{ inputs.name }}"
