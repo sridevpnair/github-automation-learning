@@ -16,3 +16,6 @@ jobs:
         run: |
           echo "Files in my repository:"
           ls -la
+
+      - name: Read README
+        run: cat README.md
