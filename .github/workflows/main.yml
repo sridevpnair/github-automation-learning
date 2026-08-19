@@ -9,5 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello! My first GitHub Actions workflow!"
+      - name: Check operating system
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "I am running on:"
+          uname -a
+
+      - name: Check current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
